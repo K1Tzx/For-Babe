@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#ffeef2;
+    font-family:Arial,sans-serif;
+}
+
+.envelope{
+    width:220px;
+    height:150px;
+    background:#ff8fa3;
+    position:relative;
+    cursor:pointer;
+    border-radius:5px;
+    transition:.5s;
+}
+
+.flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-top:75px solid #ff5d8f;
+    transform-origin:top;
+    transition:.6s;
+}
+
+.content{
+    display:none;
+    text-align:center;
+    animation:fade .8s;
+}
+
+.content img{
+    width:1000px;
+    max-width:90%;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.content p{
+    margin-top:15px;
+    font-size:20px;
+    color:#d6336c;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div id="letter" class="envelope" onclick="openLetter()">
+    <div class="flap" id="flap"></div>
+</div>
+
+<div id="content" class="content">
+    <!"192b0eaaf910e524.png">
+    <img src="192b0eaaf910e524.png" alt="Our Photo">
+    <p>I love you baby muah muah muah muah ❤️</p>
+</div>
+
+<script>
+function openLetter(){
+    document.getElementById("flap").style.transform="rotateX(180deg)";
+    document.getElementById("letter").style.display="none";
+    document.getElementById("content").style.display="block";
+}
+</script>
+
+</body>
+</html>
